@@ -1,0 +1,2 @@
+[targets]
+your.server.example.org  ansible_ssh_user=root
