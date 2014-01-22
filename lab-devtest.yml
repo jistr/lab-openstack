@@ -1,0 +1,5 @@
+---
+- hosts: targets
+  roles:
+    - devtest_prereq
+    - devtest

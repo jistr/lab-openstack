@@ -1,0 +1,25 @@
+---
+- name: fact storage_pool_path_correct
+  shell: virsh pool-dumpxml default | grep '<path>{{ storage_pool_path }}</path>'
+  register: storage_pool_path_correct
+  changed_when: false
+  failed_when: false
+
+- file: state=directory path={{ storage_pool_path }}
+
+- shell: virsh pool-destroy default
+  when: storage_pool_path_correct.rc != 0
+  failed_when: false
+
+- shell: virsh pool-undefine default
+  when: storage_pool_path_correct.rc != 0
+  failed_when: false
+
+- shell: virsh pool-define-as default dir --target {{ storage_pool_path }}
+  when: storage_pool_path_correct.rc != 0
+
+- shell: virsh pool-start default
+  when: storage_pool_path_correct.rc != 0
+
+- shell: virsh pool-autostart default
+  when: storage_pool_path_correct.rc != 0

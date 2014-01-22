@@ -1,0 +1,4 @@
+---
+- yum: state=present name=libvirt
+- yum: state=present name=libvirt-python
+- service: state=running name=libvirtd

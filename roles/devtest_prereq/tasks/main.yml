@@ -1,0 +1,8 @@
+---
+- include: kvm.yml
+- include: libvirt.yml
+- include: move_libvirt_storage.yml
+
+- yum: state=present name=git
+- yum: state=present name=openvswitch
+- yum: state=present name=wget
