@@ -2,7 +2,7 @@ lab-devtest
 ===========
 
 Ansible playbook for preparing lab machines (installed by Beaker) for
-running devtest.
+running TripleO devtest.
 
 Usage
 =====
