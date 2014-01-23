@@ -5,3 +5,25 @@
             dest=/etc/sudoers.d/devtest
             mode=0440
             validate='visudo -cf %s'
+
+- name: fact devtest_authorized_keys_synced
+  shell: "[[ $(md5sum /root/.ssh/authorized_keys | cut -d' ' -f1) == $(md5sum /home/devtest/.ssh/authorized_keys | cut -d' ' -f1) ]]"
+  register: devtest_authorized_keys_synced
+  changed_when: false
+  failed_when: false
+
+- file: path=/home/devtest/.ssh
+        state=directory
+        owner=devtest
+        group=devtest
+        mode=0700
+
+- name: sync devtest authorized keys with root
+  shell: cp /root/.ssh/authorized_keys /home/devtest/.ssh/authorized_keys
+  when: devtest_authorized_keys_synced.rc != 0
+
+- file: path=/home/devtest/.ssh/authorized_keys
+        state=file
+        owner=devtest
+        group=devtest
+        mode=0600
