@@ -45,4 +45,4 @@ It ensures that on the target machine:
 
 * `devtest` user is present and has passwordless sudo rights
 
-* `tripleo-incubator` and `tripleo-image-elements` are cloned
+* `tripleo-incubator` is cloned
