@@ -3,6 +3,8 @@
 - include: libvirt.yml
 - include: move_libvirt_storage.yml
 
+- name: install package group Standard
+  yum: name="@Standard" state=present
+
 - yum: state=present name=git
 - yum: state=present name=openvswitch
-- yum: state=present name=wget
