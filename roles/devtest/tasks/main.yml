@@ -1,4 +1,6 @@
 ---
-- git: dest=/root/tripleo-incubator
+- include: user.yml
+
+- git: dest=/home/devtest/tripleo-incubator
        repo=git://git.openstack.org/openstack/tripleo-incubator
        update=no
