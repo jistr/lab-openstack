@@ -8,8 +8,6 @@ TripleO devtest is supported.
 Getting ready
 -------------
 
-On your local machine:
-
     # run this on your local machine
 
     yum install ansible
