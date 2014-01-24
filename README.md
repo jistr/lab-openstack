@@ -3,7 +3,7 @@ lab-openstack
 
 Ansible playbooks for preparing lab machines (installed by Beaker) for
 running various OpenStack development environments. Currently only
-TripleO devtest support is in development.
+TripleO devtest is supported.
 
 Getting ready
 -------------
