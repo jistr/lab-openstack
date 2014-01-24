@@ -1,4 +1,7 @@
 ---
+- name: ensure libvirtd group exists
+  group: name=libvirtd state=present
+
 - user: name=devtest groups=libvirtd,wheel append=yes
 
 - template: src=sudoers-devtest.j2
