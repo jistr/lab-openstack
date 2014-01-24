@@ -43,6 +43,11 @@ It ensures that on the target machine:
 * standard package group is installed (things like bash completion,
   wget, compression utilities, ...)
 
-* `devtest` user is present and has passwordless sudo rights
+* devtest user is present and has passwordless sudo rights
 
-* `tripleo-incubator` is cloned
+* tripleo-incubator is cloned
+
+Then ssh to the machine as `devtest` user, you'll find
+tripleo-incubator cloned in `~/tripleo/tripleo-incubator`. See
+[devtest docs](http://docs.openstack.org/developer/tripleo-incubator/devtest.html)
+for information how to proceed.
