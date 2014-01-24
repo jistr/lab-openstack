@@ -1,5 +1,5 @@
 ---
-- user: name=devtest groups=wheel append=yes
+- user: name=devtest groups=libvirtd,wheel append=yes
 
 - template: src=sudoers-devtest.j2
             dest=/etc/sudoers.d/devtest
