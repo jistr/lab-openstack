@@ -2,4 +2,5 @@
 - hosts: targets
   roles:
     - devtest_prereq
+    - moved_libvirt_storage
     - devtest
